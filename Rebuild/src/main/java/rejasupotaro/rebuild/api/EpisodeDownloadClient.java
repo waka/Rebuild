@@ -10,8 +10,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import rejasupotaro.rebuild.media.MediaFileManager;
 import rejasupotaro.rebuild.data.models.Episode;
+import rejasupotaro.rebuild.media.MediaFileManager;
 import rejasupotaro.rebuild.utils.NetworkUtils;
 
 public class EpisodeDownloadClient extends AbstractHttpClient {
@@ -41,8 +41,6 @@ public class EpisodeDownloadClient extends AbstractHttpClient {
             } else {
                 episode.insertMediaLocalPath(mediaLocalPath);
             }
-        } catch (MalformedURLException e) {
-            Log.e(TAG, "Download failed: " + episode.getEnclosure(), e);
         } catch (IOException e) {
             Log.e(TAG, "Download failed: " + episode.getEnclosure(), e);
         }

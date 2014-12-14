@@ -1,8 +1,8 @@
 package rejasupotaro.rebuild;
 
-import com.activeandroid.ActiveAndroid;
-
 import android.app.Application;
+
+import com.activeandroid.ActiveAndroid;
 
 import rejasupotaro.rebuild.api.RssFeedClient;
 import rejasupotaro.rebuild.notifications.PodcastPlayerNotification;

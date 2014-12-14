@@ -25,16 +25,16 @@ public final class ListUtils {
 
     public static int min(int... values) {
         int min = max(values);
-        for (int i = 0; i < values.length; i++) {
-            if (values[i] >= 0 && min > values[i]) {
-                min = values[i];
+        for (int value : values) {
+            if (value >= 0 && min > value) {
+                min = value;
             }
         }
         return min;
     }
 
     public static <T> List<T> filterByPage(int page, int perPage, List<T> list) {
-        List<T> filteredList = new ArrayList<T>();
+        List<T> filteredList = new ArrayList<>();
         if (page <= 0 || perPage <= 0 || list == null || list.size() == 0) {
             return filteredList;
         }

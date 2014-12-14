@@ -51,8 +51,7 @@ public final class DateUtils {
         int month = date.getMonth() + 1;
         int day = date.getDate();
         int year = 1900 + date.getYear();
-        String dateString = monthToName(month) + " " + (day < 10 ? "0" + day : day) + " " + year;
-        return dateString;
+        return monthToName(month) + " " + (day < 10 ? "0" + day : day) + " " + year;
     }
 
     public static String monthToName(int month) {
@@ -86,20 +85,6 @@ public final class DateUtils {
         }
     }
 
-    public static String createdAtToElapsedTimeText(Date createdAt) {
-        long diff = new Date().getTime() - createdAt.getTime();
-        int m = (int) (diff / 1000 / 60);
-        if (m < 60) {
-            return String.valueOf(m) + "m";
-        }
-        int h = m / 60;
-        if (h < 24) {
-            return String.valueOf(h) + "h";
-        }
-        int d = h / 24;
-        return String.valueOf(d) + "d";
-    }
-
     private static final class DurationFormatter {
 
         public static String format(int source) {
@@ -121,40 +106,6 @@ public final class DateUtils {
         }
 
         private DurationFormatter() {
-        }
-    }
-
-    private static final class PubDateParser {
-
-        private static final SimpleDateFormat FORMAT = new SimpleDateFormat(
-                "EEE, dd MMM yyyy hh:mm:ss zzz", Locale.US);
-
-        public static synchronized Date parse(String source) {
-            try {
-                return FORMAT.parse(source);
-            } catch (ParseException e) {
-                return null;
-            }
-        }
-
-        private PubDateParser() {
-        }
-    }
-
-    public static String formatTweetTime(Date source) {
-        return TweetTimeFormatter.format(source);
-    }
-
-    private static final class TweetTimeFormatter {
-
-        private static final SimpleDateFormat FORMAT = new SimpleDateFormat("hh:mm:ss a",
-                Locale.US);
-
-        public static synchronized String format(Date source) {
-            return FORMAT.format(source);
-        }
-
-        private TweetTimeFormatter() {
         }
     }
 }

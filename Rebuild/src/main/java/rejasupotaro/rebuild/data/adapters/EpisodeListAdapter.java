@@ -146,14 +146,7 @@ public class EpisodeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public static class FooterViewHolder extends RecyclerView.ViewHolder {
         public static FooterViewHolder create(ViewGroup parent) {
-            final Context context = parent.getContext();
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_footer_episode, parent, false);
-            view.findViewById(R.id.miyagawa_text).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    IntentUtils.openMiyagawaProfile(context);
-                }
-            });
             return new FooterViewHolder(view);
         }
 

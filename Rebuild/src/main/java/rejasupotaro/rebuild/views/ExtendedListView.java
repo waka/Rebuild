@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -196,7 +197,7 @@ public class ExtendedListView extends ListView implements OnScrollListener {
     protected boolean awakenScrollBars(int startDelay, boolean invalidate) {
         final boolean isAnimationPlayed = super.awakenScrollBars(startDelay, invalidate);
 
-        if (isAnimationPlayed == true && scrollBarPanel != null) {
+        if (isAnimationPlayed && scrollBarPanel != null) {
             if (scrollBarPanel.getVisibility() == View.GONE) {
                 scrollBarPanel.setVisibility(View.VISIBLE);
                 if (inAnimation != null) {
@@ -237,7 +238,7 @@ public class ExtendedListView extends ListView implements OnScrollListener {
     }
 
     @Override
-    protected void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(@NonNull Canvas canvas) {
         super.dispatchDraw(canvas);
 
         if (scrollBarPanel != null && scrollBarPanel.getVisibility() == View.VISIBLE) {

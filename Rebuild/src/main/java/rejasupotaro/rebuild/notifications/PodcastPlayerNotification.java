@@ -9,11 +9,11 @@ import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
 
 import rejasupotaro.rebuild.R;
+import rejasupotaro.rebuild.data.models.Episode;
 import rejasupotaro.rebuild.events.BusProvider;
 import rejasupotaro.rebuild.events.ReceivePauseActionEvent;
 import rejasupotaro.rebuild.events.ReceiveResumeActionEvent;
 import rejasupotaro.rebuild.media.PodcastPlayer;
-import rejasupotaro.rebuild.data.models.Episode;
 import rejasupotaro.rebuild.services.PodcastPlayerService;
 import rejasupotaro.rebuild.utils.DateUtils;
 import rejasupotaro.rebuild.utils.StringUtils;

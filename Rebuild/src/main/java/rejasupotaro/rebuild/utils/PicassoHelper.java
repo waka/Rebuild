@@ -1,9 +1,9 @@
 package rejasupotaro.rebuild.utils;
 
-import com.squareup.picasso.Picasso;
-
 import android.content.Context;
 import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import rejasupotaro.rebuild.R;
 import rejasupotaro.rebuild.views.transformations.CircleTransformation;
@@ -32,7 +32,7 @@ public class PicassoHelper {
                 .into(target);
     }
 
-    public static final String buildSiteThumbnailUrl(String linkUrl) {
+    public static String buildSiteThumbnailUrl(String linkUrl) {
         return "http://capture.heartrails.com/256x256?" + linkUrl;
     }
 }

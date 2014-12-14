@@ -41,6 +41,7 @@ public class ShowNoteListView extends LinearLayout {
                 row = View.inflate(getContext(), R.layout.list_item_show_note_pair, null);
                 itemView = (ShowNoteView) row.findViewById(R.id.left_item);
             } else {
+                assert row != null;
                 itemView = (ShowNoteView) row.findViewById(R.id.right_item);
             }
 

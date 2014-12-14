@@ -1,8 +1,8 @@
 package rejasupotaro.rebuild.api;
 
-import org.apache.http.Header;
-
 import android.util.Log;
+
+import org.apache.http.Header;
 
 import java.io.UnsupportedEncodingException;
 

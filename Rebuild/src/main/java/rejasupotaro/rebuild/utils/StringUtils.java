@@ -21,7 +21,7 @@ public final class StringUtils {
     }
 
     public static List<String> getGuestNamesFromTitle(String source) {
-        List<String> guestNames = new ArrayList<String>();
+        List<String> guestNames = new ArrayList<>();
         if (TextUtils.isEmpty(source) || !source.endsWith(")")) {
             return guestNames;
         }
@@ -39,11 +39,11 @@ public final class StringUtils {
     }
 
     public static List<String> getGuestNamesFromDescription(String source) {
-        List<String> guestNames = new ArrayList<String>();
+        List<String> guestNames = new ArrayList<>();
         if (TextUtils.isEmpty(source)) {
             return guestNames;
         }
-        if (source.indexOf("@") < 0) {
+        if (!source.contains("@")) {
             return guestNames;
         }
 
@@ -62,7 +62,7 @@ public final class StringUtils {
         if (TextUtils.isEmpty(source)) {
             return "";
         }
-        if (source.indexOf("@") < 0) {
+        if (!source.contains("@")) {
             return "";
         }
 

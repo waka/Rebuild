@@ -40,7 +40,7 @@ public class AboutActivity extends ActionBarActivity {
     private void setupAboutListItemView() {
         ViewUtils.addHeaderView(aboutItemListView, new AppDescriptionView(this));
 
-        List<AboutItem> aboutItemList = new ArrayList<AboutItem>();
+        List<AboutItem> aboutItemList = new ArrayList<>();
         aboutItemList.add(new AboutItem.AboutItemHeader(
                 getString(R.string.about_item_header_developer)));
         aboutItemList.add(new AboutItem.AboutItemContent(Developer.REJASUPOTARO));

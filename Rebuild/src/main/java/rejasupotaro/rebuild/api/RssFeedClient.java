@@ -1,10 +1,10 @@
 package rejasupotaro.rebuild.api;
 
-import org.apache.http.Header;
-
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Looper;
+
+import org.apache.http.Header;
 
 import java.util.List;
 
@@ -85,8 +85,6 @@ public class RssFeedClient extends AbstractHttpClient {
 
                 if (Episode.refreshTable(episodeList) || shouldUpdateListView) {
                     handler.onSuccess(ListUtils.orderByPostedAt(Episode.find()));
-                } else {
-                    // nothing to do
                 }
             }
         });

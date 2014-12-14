@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rejasupotaro.rebuild.R;
-import rejasupotaro.rebuild.utils.UiAnimations;
 
 public class StateFrameLayout extends FrameLayout {
     private AttributeSet attrs;
@@ -22,7 +21,7 @@ public class StateFrameLayout extends FrameLayout {
     public static enum State {
         CONTENT,
         PROGRESS,
-        ERORR;
+        ERORR
     }
 
     public State getState() {
@@ -71,7 +70,7 @@ public class StateFrameLayout extends FrameLayout {
     }
 
     private List<View> getAllChildren() {
-        List<View> children = new ArrayList<View>();
+        List<View> children = new ArrayList<>();
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             children.add(getChildAt(i));

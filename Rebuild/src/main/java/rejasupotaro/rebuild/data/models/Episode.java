@@ -1,16 +1,16 @@
 package rejasupotaro.rebuild.data.models;
 
-import com.activeandroid.Model;
-import com.activeandroid.annotation.Column;
-import com.activeandroid.annotation.Table;
-import com.activeandroid.query.Select;
-import com.activeandroid.query.Update;
-
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
+import com.activeandroid.query.Update;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -52,10 +52,6 @@ public class Episode extends Model implements Parcelable {
 
     public String getEpisodeId() {
         return id;
-    }
-
-    public void setEpisodeId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -118,28 +114,8 @@ public class Episode extends Model implements Parcelable {
         this.showNotes = showNotes;
     }
 
-    public boolean isFavorited() {
-        return isFavorited;
-    }
-
-    public void setIsFavorited(boolean isFavorited) {
-        this.isFavorited = isFavorited;
-    }
-
-    public boolean hasPlayed() {
-        return hasPlayed;
-    }
-
-    public void setHasPlayed(boolean hasPlayed) {
-        this.hasPlayed = hasPlayed;
-    }
-
     public String getMediaLocalPath() {
         return mediaLocalPath;
-    }
-
-    public void setMediaLocalPath(String mediaLocalPath) {
-        this.mediaLocalPath = mediaLocalPath;
     }
 
     public boolean isDownloaded() {
@@ -171,11 +147,8 @@ public class Episode extends Model implements Parcelable {
     }
 
     public boolean isSameEpisode(Episode episode) {
-        if (TextUtils.isEmpty(title) || episode == null) {
-            return false;
-        }
+        return !(TextUtils.isEmpty(title) || episode == null) && (title.equals(episode.getTitle()));
 
-        return (title.equals(episode.getTitle()));
     }
 
     private Episode(String id, String title, String description, Uri link, String pubDate,
@@ -211,7 +184,7 @@ public class Episode extends Model implements Parcelable {
     }
 
     public static List<Episode> newEpisodeFromEntity(List<RssItem> rssItemList) {
-        List<Episode> episodeList = new ArrayList<Episode>();
+        List<Episode> episodeList = new ArrayList<>();
         for (RssItem rssItem : rssItemList) {
             try {
                 Episode episode = newEpisodeFromEntity(rssItem);
@@ -235,8 +208,7 @@ public class Episode extends Model implements Parcelable {
     }
 
     public static List<Episode> find() {
-        List<Episode> episodeList = new Select().from(Episode.class).orderBy("Id ASC").execute();
-        return episodeList;
+        return new Select().from(Episode.class).orderBy("Id ASC").execute();
     }
 
     public static Episode findById(String episodeId) {

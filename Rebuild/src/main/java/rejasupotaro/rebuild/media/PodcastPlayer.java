@@ -51,8 +51,7 @@ public class PodcastPlayer extends MediaPlayer implements MediaPlayer.OnPrepared
     }
 
     public boolean isPlayingEpisode(Episode other) {
-        if (other == null) return false;
-        return other.isSameEpisode(episode);
+        return other != null && other.isSameEpisode(episode);
     }
 
     private void setCurrentTimeListener() {
@@ -104,8 +103,7 @@ public class PodcastPlayer extends MediaPlayer implements MediaPlayer.OnPrepared
             prepareAsync();
             setOnPreparedListener(this);
         } catch (IOException e) {
-            Log.e(TAG, "An error occurred while preparing data source: "
-                    + (enclosure == null ? "null" : enclosure.toString()));
+            Log.e(TAG, "An error occurred while preparing data source: " + (enclosure.toString()));
         }
     }
 

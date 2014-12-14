@@ -34,7 +34,6 @@ public class EpisodeDetailActivity extends ActionBarActivity {
 
     private Episode episode;
     private EpisodeMediaFragment episodeMediaFragment;
-    private EpisodeDetailFragment episodeDetailFragment;
     private MainThreadExecutor mainThreadExecutor = new MainThreadExecutor();
 
     public static Intent createIntent(Context context, String episodeId) {
@@ -58,7 +57,7 @@ public class EpisodeDetailActivity extends ActionBarActivity {
         episodeMediaFragment = (EpisodeMediaFragment) getFragmentManager().findFragmentById(R.id.fragment_episode_media);
         episodeMediaFragment.setup(episode);
 
-        episodeDetailFragment = (EpisodeDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_episode_detail);
+        EpisodeDetailFragment episodeDetailFragment = (EpisodeDetailFragment) getFragmentManager().findFragmentById(R.id.fragment_episode_detail);
         episodeDetailFragment.setup(episode);
     }
 
@@ -109,11 +108,6 @@ public class EpisodeDetailActivity extends ActionBarActivity {
                 titleTextView.setAlpha(alpha / 255F);
             }
         });
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            int statusBarHeight = StatusBar.getStatusBarHeight(this);
-//            statusBar.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusBarHeight));
-//        }
     }
 
     @Override

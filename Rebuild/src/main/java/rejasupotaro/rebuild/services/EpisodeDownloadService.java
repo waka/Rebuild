@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import rejasupotaro.rebuild.api.EpisodeDownloadClient;
+import rejasupotaro.rebuild.data.models.Episode;
 import rejasupotaro.rebuild.events.BusProvider;
 import rejasupotaro.rebuild.events.DownloadEpisodeCompleteEvent;
-import rejasupotaro.rebuild.data.models.Episode;
 import rejasupotaro.rebuild.notifications.EpisodeDownloadCompleteNotificaiton;
 import rejasupotaro.rebuild.notifications.EpisodeDownloadNotification;
 
@@ -18,7 +18,7 @@ public class EpisodeDownloadService extends IntentService {
     private static final String TAG = EpisodeDownloadService.class.getSimpleName();
     private static final String EXTRA_EPISODE = "extra_episode";
 
-    private static List<Episode> downloadingEpisodeList = new ArrayList<Episode>();
+    private static List<Episode> downloadingEpisodeList = new ArrayList<>();
     private static EpisodeDownloadClient episodeDownloadClient = new EpisodeDownloadClient();
 
     public static Intent createIntent(Context context, Episode episode) {
@@ -67,7 +67,7 @@ public class EpisodeDownloadService extends IntentService {
                 return index;
             }
             index++;
-        };
+        }
 
         return -1;
     }

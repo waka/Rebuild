@@ -1,10 +1,10 @@
 package rejasupotaro.rebuild.data.models;
 
-import org.apache.commons.lang3.StringEscapeUtils;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+
+import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +55,7 @@ public class Link implements Parcelable {
     public static class Parser {
 
         public static List<Link> toLinkList(String source) {
-            List<Link> linkList = new ArrayList<Link>();
+            List<Link> linkList = new ArrayList<>();
             if (TextUtils.isEmpty(source)) {
                 return linkList;
             }

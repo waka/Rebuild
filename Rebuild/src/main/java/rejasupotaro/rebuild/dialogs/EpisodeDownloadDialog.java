@@ -2,7 +2,6 @@ package rejasupotaro.rebuild.dialogs;
 
 import android.content.Context;
 
-import rejasupotaro.rebuild.R;
 import rejasupotaro.rebuild.data.models.Episode;
 import rejasupotaro.rebuild.events.BusProvider;
 import rejasupotaro.rebuild.events.ClearEpisodeCacheEvent;

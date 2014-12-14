@@ -9,29 +9,11 @@ import org.apache.http.protocol.HTTP;
 import rejasupotaro.rebuild.data.models.Episode;
 
 public final class IntentUtils {
-    private static final String URL_TWITTER = "https://twitter.com/";
-    private static final String URL_REBUILD = "http://rebuild.fm";
 
     private IntentUtils() {}
 
     public static void openGitHubRepository(Context context) {
         openBrowser(context, "https://github.com/rejasupotaro/Rebuild");
-    }
-
-    public static void openTwitter(Context context, long tweetId, String userName) {
-        openBrowser(context, "https://twitter.com/" + userName + "/status/" + tweetId);
-    }
-
-    public static void openMiyagawaProfile(Context context) {
-        openTwitterProfile(context, "miyagawa");
-    }
-
-    public static void openTwitterProfile(Context context, String name) {
-        openBrowser(context, URL_TWITTER + name);
-    }
-
-    public static void openRebuildWeb(Context context) {
-        openBrowser(context, URL_REBUILD);
     }
 
     public static void openBrowser(Context context, String url) {

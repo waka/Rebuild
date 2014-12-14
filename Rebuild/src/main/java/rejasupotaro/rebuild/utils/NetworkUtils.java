@@ -1,12 +1,12 @@
 package rejasupotaro.rebuild.utils;
 
-import org.apache.http.protocol.HTTP;
-
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.telephony.TelephonyManager;
+
+import org.apache.http.protocol.HTTP;
 
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
@@ -23,12 +23,7 @@ public final class NetworkUtils {
         String modelName = Build.MODEL;
         String carrier = getCarrier(context);
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(packageName).append("/").append(appVersion).append("; ");
-        sb.append("Android/").append(osVersion).append("; ");
-        sb.append(modelName).append("; ");
-        sb.append(carrier).append(";");
-        return sb.toString();
+        return packageName + "/" + appVersion + "; " + "Android/" + osVersion + "; " + modelName + "; " + carrier + ";";
     }
 
     private static int getAppVersion(Context context, String packageName) {
@@ -70,7 +65,7 @@ public final class NetworkUtils {
     }
 
     public static Map<String, String> createUserAgentHeader(Context context) {
-        Map<String, String> headers = new HashMap<String, String>();;
+        Map<String, String> headers = new HashMap<>();
         headers.put(HTTP.USER_AGENT, getUserAgent(context));
         return headers;
     }

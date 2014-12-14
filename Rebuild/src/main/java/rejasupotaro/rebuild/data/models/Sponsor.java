@@ -1,8 +1,8 @@
 package rejasupotaro.rebuild.data.models;
 
-import org.apache.commons.lang3.StringEscapeUtils;
-
 import android.text.TextUtils;
+
+import org.apache.commons.lang3.StringEscapeUtils;
 
 public class Sponsor {
     private static final Sponsor NULL_SPONSOR = new Sponsor("", "");
