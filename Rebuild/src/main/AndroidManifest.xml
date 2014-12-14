@@ -36,36 +36,27 @@
             android:name=".activities.EpisodeDetailActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTask"
-            android:theme="@style/RebuildNoActionBarTheme"></activity>
-        <activity
-            android:name=".activities.TimelineActivity"
-            android:configChanges="orientation|screenSize"
-            android:label="@string/label_timeline"
-            android:theme="@style/RebuildTheme"></activity>
+            android:theme="@style/RebuildNoActionBarTheme"/>
         <activity
             android:name=".activities.SettingsActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/activity_settings"
-            android:theme="@style/RebuildTheme"></activity>
-        <activity
-            android:name=".activities.ReportActivity"
-            android:configChanges="orientation|screenSize"
-            android:theme="@style/Theme.Transparent"></activity>
+            android:theme="@style/RebuildTheme"/>
         <activity
             android:name=".activities.AboutActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/activity_about"
-            android:theme="@style/RebuildTheme"></activity>
+            android:theme="@style/RebuildTheme"/>
         <activity
             android:name=".activities.RecentChangesActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/activity_recent_changes"
-            android:theme="@style/RebuildTheme"></activity>
+            android:theme="@style/RebuildTheme"/>
         <activity
             android:name=".activities.LicensesActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/activity_licenses"
-            android:theme="@style/RebuildTheme"></activity>
+            android:theme="@style/RebuildTheme"/>
 
         <service android:name="rejasupotaro.rebuild.services.PodcastPlayerService" />
         <service android:name=".services.EpisodeDownloadService" />

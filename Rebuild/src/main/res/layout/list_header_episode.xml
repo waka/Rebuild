@@ -25,14 +25,6 @@
         <TextView
             style="@style/RebuildLogText"
             android:text="@string/rebuild_description"
-            android:textSize="8sp" />
+            android:textSize="12sp" />
     </LinearLayout>
-
-    <rejasupotaro.rebuild.views.RecentTweetView
-        android:id="@+id/recent_tweet_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="@dimen/spacing_medium"
-        android:layout_marginLeft="@dimen/spacing_large" />
 </FrameLayout>

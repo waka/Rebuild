@@ -66,11 +66,6 @@
                 android:textSize="28dp" />
         </LinearLayout>
 
-        <rejasupotaro.rebuild.views.SimpleGuestListView
-            android:id="@+id/simple_guest_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

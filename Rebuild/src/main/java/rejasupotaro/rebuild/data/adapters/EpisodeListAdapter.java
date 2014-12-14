@@ -20,7 +20,6 @@ import rejasupotaro.rebuild.utils.IntentUtils;
 import rejasupotaro.rebuild.utils.StringUtils;
 import rejasupotaro.rebuild.utils.UiAnimations;
 import rejasupotaro.rebuild.views.ShowNoteView;
-import rejasupotaro.rebuild.views.SimpleGuestListView;
 
 public class EpisodeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Episode> episodes = new ArrayList<>();
@@ -94,12 +93,8 @@ public class EpisodeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         TextView subtitleTextView;
         @InjectView(R.id.episode_download_button)
         IconTextView episodeDownloadButton;
-        @InjectView(R.id.simple_guest_list)
-        SimpleGuestListView simpleGuestListView;
         @InjectView(R.id.episode_posted_at)
         IconTextView postedAtTextView;
-        @InjectView(R.id.download_state_text)
-        TextView downloadStateText;
 
         private View view;
         private OnItemClickListener onItemClickListener;
@@ -127,7 +122,6 @@ public class EpisodeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
             titleTextView.setText(episode.getTitle());
             subtitleTextView.setText(StringUtils.fromHtml(episode.getDescription()).toString());
-            simpleGuestListView.setup(StringUtils.getGuestNamesFromTitle(episode.getTitle()));
             postedAtTextView.setText(String.format("{fa-calendar}  %s", episode.getPostedAtAsString()));
             if (episode.isDownloaded()) {
                 episodeDownloadButton.setText("{fa-minus}");
@@ -181,8 +175,6 @@ public class EpisodeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         IconTextView episodeDownloadButton;
         @InjectView(R.id.episode_posted_at)
         IconTextView postedAtTextView;
-        @InjectView(R.id.download_state_text)
-        TextView downloadStateText;
 
         private View view;
         private OnItemClickListener onItemClickListener;

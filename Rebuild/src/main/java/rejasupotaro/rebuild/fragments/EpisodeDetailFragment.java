@@ -11,9 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import rejasupotaro.rebuild.R;
 import rejasupotaro.rebuild.data.models.Episode;
-import rejasupotaro.rebuild.utils.StringUtils;
 import rejasupotaro.rebuild.utils.ViewUtils;
-import rejasupotaro.rebuild.views.GuestListView;
 import rejasupotaro.rebuild.views.SectionHeaderView;
 import rejasupotaro.rebuild.views.ShowNoteListView;
 
@@ -22,8 +20,6 @@ public class EpisodeDetailFragment extends Fragment {
     SectionHeaderView sectionHeaderDescriptionView;
     @InjectView(R.id.episode_description_text)
     TextView episodeDescriptionTextView;
-    @InjectView(R.id.guest_list)
-    GuestListView guestListView;
     @InjectView(R.id.section_header_show_notes)
     SectionHeaderView sectionHeaderShowNotesView;
     @InjectView(R.id.show_notes)
@@ -49,7 +45,6 @@ public class EpisodeDetailFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         setupSectionHeaders();
         ViewUtils.setTweetText(episodeDescriptionTextView, episode.getDescription());
-        guestListView.setup(StringUtils.getGuestNamesFromTitle(episode.getTitle()));
     }
 
     @Override

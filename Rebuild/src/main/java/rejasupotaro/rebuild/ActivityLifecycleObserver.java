@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
-import rejasupotaro.rebuild.media.PodcastPlayer;
 import rejasupotaro.rebuild.notifications.PodcastPlayerNotification;
 
 public class ActivityLifecycleObserver implements Application.ActivityLifecycleCallbacks {
